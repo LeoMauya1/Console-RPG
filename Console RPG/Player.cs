@@ -8,18 +8,22 @@ namespace Console_RPG
 {
     class Player : Entity 
     {
-       public static Player jPomp = new Player("jPomp", 100, 35, new Stats(15, 20, 40));
-       public static Player jj = new Player("jj", 100, 35, new Stats(35, 18, 15));
-       public static Player Juincey = new Player("Juincey", 100, 35, new Stats(27, 27, 27));
-       public static Player jincent = new Player("jincent", 100, 35, new Stats(5, 20, 40));
-       public static Player craig = new Player("craig", 100, 45, new Stats(13, 13, 21));
+       public static Player jPomp = new Player("jPomp", 100, 35, new Stats(15, 20, 40), "her");
+       public static Player jj = new Player("jj", 100, 35, new Stats(35, 18, 15), "her");
+       public static Player Juincey = new Player("Juincey", 100, 35, new Stats(27, 27, 27), "his");
+       public static Player jincent = new Player("jincent", 100, 35, new Stats(5, 20, 40), "his");
+       public static Player craig = new Player("craig", 100, 45, new Stats(13, 13, 21),"his");
 
 
 
-        public static List <Item> Inventory  = new List <Item> ();
+        public static List <Item> Inventory  = new List<Item>() { Item.chewToy, Item.dogBooties };
+        public Player(String name, int hp, int spunk, Stats stats, string gender) : base(name, hp, spunk, stats, gender)
+        {
+           
+        }
 
-        public Player(String name, int hp, int spunk, Stats stats) : base(name, hp, spunk, stats) { }
-        public override void DoTurn(List<Player> players, List<Enemy> enemeis)
+
+        public override void DoTurn(List<Player> players, List<Enemy> enemeis, List <Moves> moves)
         {
             Console.WriteLine("Quick! Act fast.");
             Console.WriteLine("FIGHT | USE ITEM");
@@ -27,8 +31,8 @@ namespace Console_RPG
             
             if (Descion == "FIGHT")
             {
-               Entity target = ChooseTarget(enemeis.Cast<Entity>().ToList());
-               Attack(target);
+               Moves move = ChooseMove(moves.Cast<Moves>().ToList());
+
             }
             else if (Descion == "USE ITEM")
             {
@@ -62,6 +66,21 @@ namespace Console_RPG
             int index = Convert.ToInt32(Console.ReadLine());
             return choices[index - 1];
 
+        }
+        public override Moves ChooseMove(List<Moves> moves)
+        {
+            Console.WriteLine(" Type in the number of the move you want to use");
+
+            // Iterate through each of the choices
+            for (int i = 0; i < moves.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}: {moves[i].moveName} ");
+
+            }
+
+            // Let the user pick a choice.
+            int index = Convert.ToInt32(Console.ReadLine());
+            return moves[index - 1];
         }
 
         public  Item ChooseItem(List<Item> items)

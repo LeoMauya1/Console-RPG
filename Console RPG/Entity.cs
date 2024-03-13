@@ -12,11 +12,12 @@ namespace Console_RPG
         public string name;
         public int currentHp, MaxHp;
         public int currentSpunk, maxSpunk;
+        public string gender;
 
         public Stats stats;
 
 
-        public Entity(String name, int hp, int spunk, Stats stats)
+        public Entity(String name, int hp, int spunk, Stats stats, string gender)
         {
             this.name = name;
             this.currentHp = hp;
@@ -24,12 +25,14 @@ namespace Console_RPG
             this.currentSpunk = spunk;
             this.maxSpunk = spunk;
             this.stats = stats;
+            this.gender = gender;
         }
 
         public abstract void Attack(Entity target);
         public abstract Entity ChooseTarget(List<Entity> choices);
+        public abstract Moves  ChooseMove(List<Moves> moves);
 
-        public abstract void DoTurn(List<Player> players, List<Enemy> enemies);
+        public abstract void DoTurn(List<Player> players, List<Enemy> enemies, List<Moves> moves);
 
         public void useItem (Item item, Entity target)
         {

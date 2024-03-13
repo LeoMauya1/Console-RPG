@@ -11,10 +11,18 @@ namespace Console_RPG
         static void Main(string[] args)
         {
 
+            
 
 
 
 
+            Console.WriteLine(" your name..");
+            System.Threading.Thread.Sleep(2);
+            Console.WriteLine("is jpomp");
+
+
+
+           
             Location.livingRoom.SetNearbyLocations(north: Location.mapleLane);
             Location.mapleLane.SetNearbyLocations(north: Location.animalPark, south: Location.livingRoom);
             Location.animalPark.SetNearbyLocations(south: Location.mapleLane, north: Location.kkDinner, east: Location.thePound);

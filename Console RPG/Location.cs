@@ -12,6 +12,7 @@ namespace Console_RPG
         public static Location mapleLane = new Location("Maple Lane", "its peacful here.");
         public static Location kkDinner = new Location("KK's Dinner", " Something smells good..", new Battle(new List<Enemy>() {Enemy.ray}));
         public static Location villaValley = new Location("Villa Valley", " the valley of the elite.");
+    
 
        
 

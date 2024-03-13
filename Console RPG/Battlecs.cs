@@ -62,12 +62,15 @@ namespace Console_RPG
 
                 if (enemies.TrueForAll(enemy => enemy.currentHp <= 0))
                 {
-                    Console.WriteLine("WHAT.");
+                    Console.WriteLine("woohoo.");
                     break;
                 }
 
 
             }
+ 
+
+
 
             // anything that happens no matter no who wins the battle..
         }

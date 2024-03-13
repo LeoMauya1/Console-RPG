@@ -10,13 +10,14 @@ namespace Console_RPG
 
 
 
-        public static Enemy ray = new Enemy("ray", 12, 23, new Stats(34, 23, 43), 23);
+        public static Enemy ray = new Enemy("ray", 100, 23, new Stats(34, 23, 43), 23,"his");
+        public static Enemy JacynTracy = new Enemy("Jacey & tracy", 100, 33, new Stats(20, 40, 24), 10, "they");
 
 
 
         public int lifeForce;
 
-        public Enemy(string name, int hp, int spunk, Stats stats, int lifeForce) : base(name, hp, spunk, stats)
+        public Enemy(string name, int hp, int spunk, Stats stats, int lifeForce, string gender) : base(name, hp, spunk, stats, gender)
         {
 
             this.lifeForce = lifeForce;
@@ -45,5 +46,6 @@ namespace Console_RPG
         }
 
     }
+
 
 }
