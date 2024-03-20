@@ -33,7 +33,9 @@ namespace Console_RPG
                    if ( enemy.currentHp > 0 )
                    {
                     Console.WriteLine($"{enemy.name} approaches!");
-                    enemy.DoTurn(players, enemies);
+                    enemy.DoTurn(players, enemies,null);
+                    Console.WriteLine($"{enemy.name} did {enemy.stats.attack} damage!");
+                    Console.WriteLine("\n");
 
                    } 
                 }
@@ -48,7 +50,7 @@ namespace Console_RPG
                    if (player.currentHp > 0) 
                    {
                       Console.WriteLine("Go forth" + " " + player.name + "..");
-                        player.DoTurn(players, enemies);
+                        player.DoTurn(players, enemies, player.moves);
 
                    }
                 }

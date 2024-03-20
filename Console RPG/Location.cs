@@ -9,9 +9,13 @@ namespace Console_RPG
         public static Location thePound = new Location("The Pound", " THE ANIMAL SANCTION");
         public static Location animalPark = new Location("The Animal Park", " fun! fun! fun1!!!!1!!");
         public static Location livingRoom = new Location("The Living Room", " wonder where the dead room is!");
-        public static Location mapleLane = new Location("Maple Lane", "its peacful here.");
-        public static Location kkDinner = new Location("KK's Dinner", " Something smells good..", new Battle(new List<Enemy>() {Enemy.ray}));
+        public static Location mapleLane = new Location("Maple Lane", "its peacful here.", new Battle(new List<Enemy> {Enemy.JacynTracy}));
+        public static Location kkDinner = new Location("KK's Dinner", " Something smells good..", new Battle(new List<Enemy>() {Enemy.ray,Enemy.Kai}));
         public static Location villaValley = new Location("Villa Valley", " the valley of the elite.");
+        public static Location cecilHill = new Location("Cecil Hill", " Cecil Hill! it's reaally calm here ");
+        public static Location SuperFarmersMarket = new Location("SuperFarmersMarket", "Dont really get makes this place so super..");
+        public static Location SuperDuperFarmersMarket = new Location("SuperDUPERFarmersMarket", "OKAY NOW I GET IT.");
+        public static Location LastStop = new Location("The Last Stop", " a chill runs down your back.");
     
 
        
